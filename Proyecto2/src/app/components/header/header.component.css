@@ -11,7 +11,7 @@ body{
 .header{
     z-index: 1000;
     background-color: #333333;
-    height: 60px;
+    height: 95px;
     position: fixed;
     width: 100%;
     top: 0;
@@ -143,7 +143,7 @@ body{
 .user-menu:hover .user-dropdown {
     display: block;
 }
-@media (max-width: 768px){
+/*@media (max-width: 768px){
     body{
         padding: 90px 20px 0;
     }
@@ -180,7 +180,7 @@ body{
     .nav-menu_visible{
         left: 0;
     }
-}
+}*/
 .nav-menu-link:hover{
     background-color: #fff;
     color: #333333;

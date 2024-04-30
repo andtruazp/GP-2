@@ -10,8 +10,8 @@ import { Observable } from 'rxjs';
 export class ActividadService {
 
   actividad: Actividad | undefined
-  url ='http://localhost:3002/actividad/'
-  //url = 'mysql://root:dmuckBEhsWYOdIkmpaCymWAauMcFczEb@roundhouse.proxy.rlwy.net:49671/railway/actividad/'
+  url ='https://gp-back-production.up.railway.app/actividad/'
+
 
   constructor(private http:HttpClient) { }
 

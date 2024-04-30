@@ -26,6 +26,7 @@ import { NgxCaptchaModule } from 'ngx-captcha';
 import { RecuperacionComponent } from './components/recuperacion/recuperacion.component';
 import { RestablecerComponent } from './components/restablecer/restablecer.component';
 import { SessionService } from './service/session.service';
+import { HomenavComponent } from './components/homenav/homenav.component';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { SessionService } from './service/session.service';
     BreadcrumsComponent,
     RecuperacionComponent,
     RestablecerComponent,
+    HomenavComponent,
 
   ],
   imports: [

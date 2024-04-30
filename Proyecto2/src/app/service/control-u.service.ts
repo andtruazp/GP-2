@@ -9,7 +9,7 @@ export class ControlUService {
 
   user: any[]=[]
 
-  url='http://localhost:3002/controlu/'
+  url='https://gp-back-production.up.railway.app/controlu/'
 
   constructor(private http:HttpClient) { }
 

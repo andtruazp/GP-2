@@ -2,19 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  selector: 'app-homenav',
+  templateUrl: './homenav.component.html',
+  styleUrls: ['./homenav.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HomenavComponent implements OnInit{
   id: any;
   Datosusuario: any;
   Datos: any;
   nombreUsuario: any;
   estaLogueado: boolean = false;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router){}
 
+  
   ngOnInit(): void {
     this.Datosusuario = sessionStorage.getItem('userData');
     this.Datos = JSON.parse(this.Datosusuario);
@@ -24,26 +25,31 @@ export class HeaderComponent implements OnInit {
     this.id = primerUsuario.id_u;
     this.nombreUsuario = primerUsuario.usuario;
     console.log(this.nombreUsuario)
-    }else{
-      this.id = 1
     }
-    
-
-    console.log(this.id)
-
-    
+    this.ocultarSeccion();
     this.actualizarTextoEnlace();
+    
   }
-  
-  
-  cerrarSesion(){
-    sessionStorage.removeItem('userData');
-    this.router.navigate(['/']);
+
+  ocultarSeccion(): void {
+    if (this.Datos) {
+      const heroSection = document.getElementById('registrate');
+      if (heroSection) {
+        heroSection.style.display = 'none';
+      }
+    }
   }
-  
 
-  
+  rol(){
+    if(this.id == 1){
+      this.router.navigate(['/equipo']);
+    }else if(!this.Datos){
+      this.router.navigate(['/login']);
+    }else{
+      this.router.navigate(['/homeuser']);
+    }
 
+  }
   actualizarTextoEnlace(): void {
     const enlace = document.getElementById('iniciarCerrarSesion');
     if (enlace) {
@@ -56,6 +62,11 @@ export class HeaderComponent implements OnInit {
       }
     }
   }
+  cerrarSesion(){
+    sessionStorage.removeItem('userData');
+    console.log('Sesion finalizada')
+    window.location.reload();
+  }
 
   gestionarSesion(): void {
     if (this.estaLogueado) {
@@ -65,4 +76,7 @@ export class HeaderComponent implements OnInit {
       this.router.navigate(['/login']);
     }
   }
+
 }
+
+

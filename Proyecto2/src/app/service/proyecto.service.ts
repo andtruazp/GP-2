@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class ProyectoService {
 
   proyecto: Proyecto | undefined
-  url ='http://localhost:3002/proyecto/'
+  url ='https://gp-back-production.up.railway.app/proyecto/'
 
   constructor(private http:HttpClient) { }
 

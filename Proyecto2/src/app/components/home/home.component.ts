@@ -1,17 +1,14 @@
-import { Component, OnInit, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { FormBuilder, FormGroup } from "@angular/forms";
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import Typed from 'typed.js';
 import { SessionService } from '../../service/session.service';
-import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit, AfterViewInit {
+export class HomeComponent implements OnInit {
   usuario: any;
   Datosusuario: any;
   Datos: any;
@@ -20,11 +17,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
   @ViewChild('inputSearch') inputSearch!: ElementRef<HTMLInputElement>;
 
   constructor(
-    private http: HttpClient,
     private router: Router,
     private sessionService: SessionService
   ) {
   }
+  
   ngOnInit() {
 
     const options = {
@@ -47,9 +44,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     this.Datosusuario = sessionStorage.getItem('userData');
     this.Datos = JSON.parse(this.Datosusuario);
-    console.log(this.Datos)
-    const user1 = this.Datos[0];
-    this.id_u=user1.id_u
+    if(this.Datos){
+      console.log(this.Datos)
+      const user1 = this.Datos[0];
+      this.id_u=user1.id_u
+    }
 
     this.ocultarSeccion();
     this.actualizarTextoEnlace();
@@ -131,23 +130,5 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
   }
 
-  ngAfterViewInit(): void {
-    const navToggle: HTMLElement | null = document.querySelector(".nav-toggle");
-    const navMenu: HTMLElement | null = document.querySelector(".nav-menu");
-    const userToggle: HTMLElement | null = document.querySelector(".user-toggle"); // Corregido
-    const userMenu: HTMLElement | null = document.querySelector(".user-dropdown"); // Corregido
-
-    if (navToggle && navMenu) {
-      navToggle.addEventListener("click", () => {
-        navMenu.classList.toggle("nav-menu_visible");
-      });
-    }
-
-    if (userToggle && userMenu) {
-      userToggle.addEventListener("click", () => {
-        userMenu.classList.toggle("user-dropdown-visible");
-      });
-    }
-    
-  }
+  
 }

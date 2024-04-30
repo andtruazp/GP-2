@@ -9,7 +9,7 @@ import { map, Observable } from 'rxjs';
 export class IntegrantesService {
 
   integrante: Integrante | undefined
-  url ='http://localhost:3002/integrantes/'
+  url ='https://gp-back-production.up.railway.app/integrantes/'
 
   constructor(private http:HttpClient) { }
 

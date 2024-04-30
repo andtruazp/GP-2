@@ -1,3 +1,4 @@
+import { HomenavComponent } from './components/homenav/homenav.component';
 import { HomeuserComponent } from './components/homeuser/homeuser.component';
 import { SitemapComponent } from './components/sitemap/sitemap.component';
 import { Error403Component } from './error/error403/error403.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path:'',component: HomeComponent},
   {path:'login', component: LoginComponent},
   {path:'homeuser', component: HomeuserComponent},
+  {path: 'nav', component: HomenavComponent},
   {path:'register', component: RegisterComponent},
   {path:'equipo', component: EquipoComponent},
   {path:'proyecto', component: ProyectoComponent},

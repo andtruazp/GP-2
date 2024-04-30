@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class EstadosService {
   
-  url='http://localhost:3002/estado/act'
+  url='https://gp-back-production.up.railway.app/estado/act'
 
   constructor(private http:HttpClient) { }
 

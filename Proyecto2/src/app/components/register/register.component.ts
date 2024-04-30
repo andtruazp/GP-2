@@ -58,7 +58,7 @@ export class RegisterComponent {
     .set('correo', this.correo);
 
   // Realiza la solicitud GET al endpoint /checkuser para verificar la existencia del usuario
-  this.http.get('http://localhost:3002/checkuser', { params: params })
+  this.http.get('https://gp-back-production.up.railway.app/checkuser', { params: params })
   .subscribe(
     (response: any) => {
       this.otp =response.otp
@@ -87,7 +87,7 @@ export class RegisterComponent {
         correo: this.correo
       };
   
-      this.http.post('http://localhost:3002/register', registerData).subscribe(
+      this.http.post('https://gp-back-production.up.railway.app/register', registerData).subscribe(
         (response: any) => {
           // Redirige al usuario a la página de inicio de sesión después de registrar
           this.router.navigate(['/login']);

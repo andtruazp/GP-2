@@ -1,38 +1,29 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Gestión de Proyectos</title>
-    <!--<link rel="stylesheet" href="home.component.css">-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/smooth-scrollbar/dist/smooth-scrollbar.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!--<script src="https://kit.fontawesome.com/cb0fbc30f4.js" crossorigin="anonymous"></script>-->
-</head>
+
 <body>
 
     <header class="header">
-        <nav class="nav">
-            <div class="logo">
+        <nav class="nav-bar">
+            <li class="logo">
                 <a href="/"><img src="../../../assets/logo.png" alt="Logo"></a>
-            </div>
-            <div class="search-container">
-                <div id="ctn-icon-search" >
-                    <i class="fa-solid fa-magnifying-glass" (click)="searchAndNavigate()"></i>
-                    <input type="search" id="inputSearch" #inputSearch placeholder="Buscando ...">
+            </li>
+            <input type="checkbox" id="check">
+            <span class="menu">
+                <div class="search-container">
+                    <div id="ctn-icon-search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="search" id="inputSearch" #inputSearch placeholder="Buscando ...">
+                    </div>
                 </div>
-            </div>
-            <button class="nav-toggle">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-            <ul class="nav-menu">
-                <li class="nav-menu-item"><a href="#" (click)="rol()" class="nav-menu-link nav-link">Proyectos</a></li>
-                <li class="nav-menu-item"><a href="#about" class="nav-menu-link nav-link">Acerca De Nosotros</a></li>
-                <li class="nav-menu-item"><a href="/sitemap" class="nav-menu-link nav-link">Mapa del sitio</a></li>
-                <li class="nav-menu-item"><a href="#" class= "nav-menu-link nav-link" id="iniciarCerrarSesion" (click)="gestionarSesion()">
-                    {{ estaLogueado ? 'Cerrar Sesión' : 'Iniciar Sesión' }}
-                  </a></li>
-            </ul>
+        
+                <li><a href="#" (click)="rol()">Proyectos</a></li>
+                <li><a href="#about">Acerca de Nosotros</a></li>
+                <li><a href="/sitemap">Mapa del Sitio</a></li>
+                <li><a href="#" id="iniciarCerrarSesion" (click)="gestionarSesion()">{{ estaLogueado ? 'Cerrar Sesión' :
+                        'Iniciar Sesión' }}</a></li>
+                <label for="check" class="close-menu"><i class="fa-solid fa-bars"></i></label>
+            </span>
+            <label for="check" class="open-menu"><i class="fa-solid fa-bars"></i></label>
+        
         </nav>
     </header>
 
@@ -99,4 +90,3 @@
     </div>    
     <app-footer></app-footer>
 </body>
-</html>

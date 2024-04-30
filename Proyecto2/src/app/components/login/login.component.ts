@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
 
       
     // Realizar la solicitud GET al servidor con los datos en la URL
-    this.http.get('http://localhost:3002/login', { params }).subscribe(
+    this.http.get('https://gp-back-production.up.railway.app/login', { params }).subscribe(
       (response: any) => {
         if (response.message === 'Inicio de sesión exitoso') {
           const userData = response.userData;

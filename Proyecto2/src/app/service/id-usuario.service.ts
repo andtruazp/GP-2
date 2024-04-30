@@ -9,6 +9,6 @@ export class IdUsuarioService {
   constructor(private http: HttpClient) { }
 
   obtenerIdUsuario() {
-    return this.http.get('http://localhost:3001/id');
+    return this.http.get('https://gp-back-production.up.railway.app/id');
   }
 }

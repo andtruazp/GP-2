@@ -31,7 +31,7 @@ export class RecuperacionComponent implements OnInit {
     
       const body = { email: this.Email }; // Crear objeto con la propiedad 'email'
     
-      this.http.post('http://localhost:3002/recuperar-contrasena', body).subscribe(
+      this.http.post('https://gp-back-production.up.railway.app/recuperar-contrasena', body).subscribe(
         (response) => {
           Swal.fire({
             icon: "success",

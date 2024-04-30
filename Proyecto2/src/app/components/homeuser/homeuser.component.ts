@@ -42,7 +42,7 @@ export class HomeuserComponent implements OnInit {
 
   getAllProyectos() {
     // Realiza una solicitud HTTP GET para obtener todos los proyectos del usuario
-    this.http.get<any[]>(`http://localhost:3002/proyecto/all/${this.id}`).subscribe(
+    this.http.get<any[]>(`https://gp-back-production.up.railway.app/proyecto/all/${this.id}`).subscribe(
       proyectos => {
         this.proyectos = proyectos;
         console.log('Proyectos obtenidos:', proyectos);

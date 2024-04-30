@@ -46,7 +46,7 @@ export class RestablecerComponent implements OnInit {
       token: this.token
     };
 
-    this.http.post('http://localhost:3002/cambiar-contrasena', body).subscribe(
+    this.http.post('https://gp-back-production.up.railway.app/cambiar-contrasena', body).subscribe(
       (response)=> {
         Swal.fire({
           icon: "success",
